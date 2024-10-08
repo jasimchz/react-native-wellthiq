@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
     "rootDir": ".",
+    "baseUrl": "./src",
     "paths": {
-      "@hybeck/react-native-wellthiq": ["./src/index"]
+      "@hybeck/react-native-wellthiq": ["index"],
+      "@utils/*": ["utils/*"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

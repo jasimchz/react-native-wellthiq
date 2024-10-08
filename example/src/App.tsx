@@ -1,17 +1,22 @@
-import { useState, useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from '@hybeck/react-native-wellthiq';
+import { Initialize, ENV } from '@hybeck/react-native-wellthiq';
 
 export default function App() {
-  const [result, setResult] = useState<number | undefined>();
-
-  useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+  Initialize({
+    key: 'Hello',
+    env: ENV.PROD,
+    whitelist: ['com.myapp.com', 'com.anyapp.com'],
+    appConfig: {
+      appIcon: 'https://chzapps.com',
+      inviteMessage: 'Join us for great rewards!',
+      inviteExpire: true,
+      permissionId: '1001',
+    },
+  });
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>Result: {}</Text>
     </View>
   );
 }
